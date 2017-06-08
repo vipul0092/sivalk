@@ -1,27 +1,27 @@
 import React from 'react';
-import LoginComponent from './login-component';
-import ChatCanvasComponent from './chat-canvas-component';
+import Login from './login';
+import ChatCanvas from './chat/canvas';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-class AppComponent extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        let markup = this.props.isUserLoggedIn ? <ChatCanvasComponent /> : <LoginComponent />;
+        let markup = this.props.isUserLoggedIn ? <ChatCanvas /> : <Login />;
         return (
             markup
         );
     }
 }
 
-AppComponent.propTypes = {
+App.propTypes = {
     isUserLoggedIn: PropTypes.bool.isRequired
 };
 
-AppComponent = connect(
+App = connect(
     (state) => {
         return {
             isUserLoggedIn: state.userLogin.isLoggedIn
@@ -30,6 +30,6 @@ AppComponent = connect(
     (dispatcher) => {
         return {};
     }
-)(AppComponent);
+)(App);
 
-export default AppComponent;
+export default App;

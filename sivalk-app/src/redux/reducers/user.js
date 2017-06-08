@@ -1,4 +1,4 @@
-import actions from '../actions/user-actions';
+import actions from '../actions/user';
 
 const initialUserState = {
     userId: '',

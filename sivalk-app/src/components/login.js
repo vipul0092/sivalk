@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import actions from '../redux/actions/user-actions';
+import actions from '../redux/actions/user';
 import PropTypes from 'prop-types';
 
-class LoginComponent extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
 
@@ -38,11 +38,11 @@ class LoginComponent extends React.Component {
     }
 }
 
-LoginComponent.propTypes = {
+Login.propTypes = {
     doUserLogin: PropTypes.func.isRequired
 };
 
-LoginComponent = connect(
+Login = connect(
     (state) => {
         return {};
     },
@@ -51,6 +51,6 @@ LoginComponent = connect(
             doUserLogin: (userId) => dispatcher((dispatcher) => dispatcher(actions.actionMethods.doUserLogin(userId)))
         };
     }
-)(LoginComponent);
+)(Login);
 
-export default LoginComponent;
+export default Login;
