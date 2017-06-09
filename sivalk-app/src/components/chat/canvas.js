@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Footer from './footer';
 import Header from './header';
+import MessageListDisplay from './message/list-display';
 
 class ChatCanvas extends React.Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class ChatCanvas extends React.Component {
         return (
             <div>
                 <Header userId={this.props.userId} logOutUser={this.props.logOutUser} />
-                <Footer />
+                <MessageListDisplay />
+                <Footer userId={this.props.userId} />
             </div>
         );
     }

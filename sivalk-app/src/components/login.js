@@ -12,11 +12,13 @@ class Login extends React.Component {
     }
 
     handleLoginClick() {
-        this.props.doUserLogin(this.userIdInput.value);
+        if (this.userIdInput.value !== '') {
+            this.props.doUserLogin(this.userIdInput.value);
+        }
     }
 
     handleKeyPress(event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && this.userIdInput.value !== '') {
             this.props.doUserLogin(this.userIdInput.value);
         }
     }
